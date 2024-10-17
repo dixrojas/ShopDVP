@@ -1,0 +1,457 @@
+{
+	"id": "65103940-fc09-4ee5-8fec-7a37e2c3d041",
+	"name": "Double Collection",
+	"timestamp": "2024-10-17T04:53:28.617Z",
+	"collection_id": "7793662-eb322bc7-2ac2-48ad-b8c6-31d57f44ab57",
+	"folder_id": 0,
+	"environment_id": "7793662-d56d3507-7019-44d3-ace6-61833a80858e",
+	"totalPass": 70,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-10-17T04:53:08.683Z",
+	"totalFail": 20,
+	"results": [
+		{
+			"id": "7c7dd8f3-0260-4f97-afae-539d8a5f2169",
+			"name": "GET All Electronics Products",
+			"url": "https://fakestoreapi.com/products/category/electronics?sort=asc?&limit=21",
+			"time": 301,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Status code is not 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Status code is not 400": {
+					"pass": 0,
+					"fail": 10
+				}
+			},
+			"times": [
+				453,
+				309,
+				302,
+				304,
+				302,
+				303,
+				312,
+				305,
+				301,
+				301
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				},
+				{
+					"Status code is 200": true,
+					"Status code is not 400": false
+				}
+			]
+		},
+		{
+			"id": "914fb7e4-309c-4305-8080-7c837f4235b7",
+			"name": "GET Single Product",
+			"url": "https://fakestoreapi.com/products/15",
+			"time": 202,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"The response has all properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 10,
+					"fail": 0
+				},
+				"The response has all properties": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				205,
+				212,
+				202,
+				203,
+				205,
+				203,
+				204,
+				205,
+				203,
+				202
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				},
+				{
+					"Status code is 200": true,
+					"The response has all properties": true
+				}
+			]
+		},
+		{
+			"id": "5ece24f6-84ac-4ae4-bea0-382cf15308f6",
+			"name": "POST Add New Product",
+			"url": "https://fakestoreapi.com/products",
+			"time": 223,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"The new product was created successfully": true,
+				"The new product id is: 21": true
+			},
+			"testPassFailCounts": {
+				"The new product was created successfully": {
+					"pass": 10,
+					"fail": 0
+				},
+				"The new product id is: 21": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				450,
+				203,
+				203,
+				205,
+				245,
+				204,
+				209,
+				206,
+				205,
+				223
+			],
+			"allTests": [
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				},
+				{
+					"The new product was created successfully": true,
+					"The new product id is: 21": true
+				}
+			]
+		},
+		{
+			"id": "d9d31ebe-57ee-4208-87a6-2f82d5ee1fb1",
+			"name": "PUT Update Product",
+			"url": "https://fakestoreapi.com/products/21",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				204,
+				209,
+				205,
+				205,
+				423,
+				204,
+				205,
+				204,
+				209,
+				205
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "5c0eaaa7-7ff8-43bc-9787-38ddbd917561",
+			"name": "GET Products to Delete",
+			"url": "https://fakestoreapi.com/products/9",
+			"time": 204,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"The new updated product ID is: 21": true,
+				"Response time is less than 200ms": false
+			},
+			"testPassFailCounts": {
+				"The new updated product ID is: 21": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 10
+				}
+			},
+			"times": [
+				227,
+				204,
+				202,
+				207,
+				207,
+				204,
+				204,
+				210,
+				251,
+				204
+			],
+			"allTests": [
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				},
+				{
+					"The new updated product ID is: 21": true,
+					"Response time is less than 200ms": false
+				}
+			]
+		},
+		{
+			"id": "d8961af6-e95c-422c-8f62-c82b3fc0a102",
+			"name": "DELETE Get Product",
+			"url": "https://fakestoreapi.com/products/9",
+			"time": 302,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test data type of the response": true
+			},
+			"testPassFailCounts": {
+				"Test data type of the response": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				331,
+				303,
+				300,
+				306,
+				300,
+				301,
+				301,
+				311,
+				326,
+				302
+			],
+			"allTests": [
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				},
+				{
+					"Test data type of the response": true
+				}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 15063,
+	"collection": {
+		"requests": [
+			{
+				"id": "7c7dd8f3-0260-4f97-afae-539d8a5f2169",
+				"method": "GET"
+			},
+			{
+				"id": "914fb7e4-309c-4305-8080-7c837f4235b7",
+				"method": "GET"
+			},
+			{
+				"id": "5ece24f6-84ac-4ae4-bea0-382cf15308f6",
+				"method": "POST"
+			},
+			{
+				"id": "d9d31ebe-57ee-4208-87a6-2f82d5ee1fb1",
+				"method": "PUT"
+			},
+			{
+				"id": "5c0eaaa7-7ff8-43bc-9787-38ddbd917561",
+				"method": "GET"
+			},
+			{
+				"id": "d8961af6-e95c-422c-8f62-c82b3fc0a102",
+				"method": "DELETE"
+			}
+		]
+	}
+}
