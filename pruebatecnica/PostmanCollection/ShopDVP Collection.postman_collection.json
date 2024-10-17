@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "eb322bc7-2ac2-48ad-b8c6-31d57f44ab57",
+		"name": "ShopDVP Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7793662"
+	},
+	"item": [
+		{
+			"name": "GET All Electronics Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code is not 400\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/products/category/electronics?sort=asc?&limit=21",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"products",
+						"category",
+						"electronics"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "asc?"
+						},
+						{
+							"key": "limit",
+							"value": "21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Single Product",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"{\r",
+							"    pm.collectionVariables.set (\"idRandom\", _.random (1,21))\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"The response has all properties\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.test(\"Status code is 200\", () => {\r",
+							"        pm.expect(pm.response.code).to.eql(200);\r",
+							"        });\r",
+							"    pm.expect(responseJson.category).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/products/{{idRandom}}",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"products",
+						"{{idRandom}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Add New Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonDataAddProduct = pm.response.json();\r",
+							"pm.test(\"The new product was created successfully\", () =>{\r",
+							"    pm.collectionVariables.set(\"idProductAdd\", jsonDataAddProduct.id);\r",
+							"})\r",
+							"pm.test(\"The new product id is: \" + pm.collectionVariables.get(\"idProductAdd\"), () =>{\r",
+							"    pm.collectionVariables.set(\"idProductAdd\", jsonDataAddProduct.id);;\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\": \"test testing\",\r\n\t\"price\": 13.5,\r\n\t\"description\": \"lorem ipsum set\",\r\n\t\"image\": \"https://i.pravatar.cc\",\r\n\t\"category\": \"women's\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/products",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"image\": \"https://i.pravatar.cc1new\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/products/21",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"products",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products to Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"pm.test(\"The new updated product ID is: \" + pm.collectionVariables.get(\"idProductAdd\"), () =>{\r",
+							"pm.collectionVariables.set(\"idProductGet\", jsonData.id);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/products/9",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"products",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Get Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonDataGet = pm.response.json();\r",
+							"pm.test(\"Test data type of the response\", () => {\r",
+							"  pm.expect(jsonDataGet).to.be.an(\"object\");\r",
+							"  pm.expect(jsonDataGet.title).to.be.a(\"string\");\r",
+							"  pm.expect(jsonDataGet.id).to.be.a(\"number\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/products/{{idProductGet}}",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"products",
+						"{{idProductGet}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "idRandom",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "idProducts",
+			"value": ""
+		},
+		{
+			"key": "idProductGet",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "idProductGetDelete",
+			"value": "0"
+		},
+		{
+			"key": "priceProduct",
+			"value": ""
+		},
+		{
+			"key": "categoryProduct",
+			"value": ""
+		},
+		{
+			"key": "Get",
+			"value": ""
+		},
+		{
+			"key": "idProductAdd",
+			"value": ""
+		}
+	]
+}
